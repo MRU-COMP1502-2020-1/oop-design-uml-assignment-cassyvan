@@ -1,0 +1,35 @@
+Q3. Prog2.java is better in terms of design and consideration because it encapsulates the data with private declarations. 
+
+Q4. The MyReader class has unrelated functions to the class. These functions should be written in a different class, for example: 
+class IPAddress{
+
+    public boolean validateLocation(String pathIP) {
+         return ping(pathIP) && checkFTP(pathIP);
+    }
+    private boolean checkFTP(String pathIP) {
+         return true;
+    }
+
+    private boolean ping(String pathIP) {
+          return true;
+    }
+}
+
+class MyReader {
+
+    // read the resource from disk
+    public String readFromDisk(String fileName) {
+         return "data of " + fileName;
+    }
+
+    // read the resource from web
+    public String readFromWeb(String url) {
+         return "data of " + url;
+    }
+
+    // read the resource from network
+    public String readFromNetwork(String networkAddress) {
+         return "data of " + networkAddress;
+    }
+
+}
